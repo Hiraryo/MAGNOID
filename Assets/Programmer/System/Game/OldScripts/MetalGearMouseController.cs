@@ -21,27 +21,30 @@ public class MetalGearMouseController : MonoBehaviour
         //マウスのX,Y軸がどれほど移動したかを取得します
         float X_Rotation = Input.GetAxis("Mouse X");
         float Y_Rotation = Input.GetAxis("Mouse Y");
-        //Y軸を更新します（キャラクターを回転）取得したX軸の変更をキャラクターのY軸に反映します
-        pivot.transform.Rotate(0, X_Rotation, 0);
-
-        //次はY軸の設定です。
-        float nowAngle = pivot.transform.localRotation.x;
-        //最大値、または最小値を超えた場合、カメラをそれ以上動かない用にしています。
-        //カメラが一回転しないようにするのを防ぎます。
-        if (-Y_Rotation != 0)
+        if(Input.GetMouseButton(0))
         {
-            if (0 < Y_Rotation)
+            //Y軸を更新します（キャラクターを回転）取得したX軸の変更をキャラクターのY軸に反映します
+            pivot.transform.Rotate(0, X_Rotation, 0);
+
+            //次はY軸の設定です。
+            float nowAngle = pivot.transform.localRotation.x;
+            //最大値、または最小値を超えた場合、カメラをそれ以上動かない用にしています。
+            //カメラが一回転しないようにするのを防ぎます。
+            if (-Y_Rotation != 0)
             {
-                if (minYAngle <= nowAngle)
+                if (0 < Y_Rotation)
                 {
-                    pivot.transform.Rotate(Y_Rotation, 0, 0);
+                    if (minYAngle <= nowAngle)
+                    {
+                        pivot.transform.Rotate(Y_Rotation, 0, 0);
+                    }
                 }
-            }
-            else
-            {
-                if (nowAngle <= maxYAngle)
+                else
                 {
-                    pivot.transform.Rotate(Y_Rotation, 0, 0);
+                    if (nowAngle <= maxYAngle)
+                    {
+                        pivot.transform.Rotate(Y_Rotation, 0, 0);
+                    }
                 }
             }
         }

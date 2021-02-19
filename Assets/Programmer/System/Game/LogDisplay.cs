@@ -6,11 +6,16 @@ using System.Text;
 public class LogDisplay : MonoBehaviour
 {
     const float DISPLAYTIME = 5.0f;
-    [SerializeField] private int _MaxLogCount = 20;                        // Maximun number of logs saved
-    [SerializeField] private float _logElapsedTime;                           // This variable represents the elapsed time for the log display.
-    [SerializeField] private Rect _area = new Rect(50, 10, 1000, 400);      // Area to display logs
-    private Queue<string> _logMessages = new Queue<string>();                     // Variable to put the log string
-    private StringBuilder _stringBuilder = new StringBuilder();                    // This is used to combine the strings in the log
+    // Maximun number of logs saved
+    [SerializeField] private int _MaxLogCount = 20;
+    // This variable represents the elapsed time for the log display.
+    [SerializeField] private float _logElapsedTime;
+    // Area to display logs
+    [SerializeField] private Rect _area = new Rect(50, 10, 1000, 400);
+    // Variable to put the log string
+    private Queue<string> _logMessages = new Queue<string>();
+    // This is used to combine the strings in the log
+    private StringBuilder _stringBuilder = new StringBuilder();
 
     // Start is called before the first frame update
     void Start()
