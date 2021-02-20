@@ -3,9 +3,12 @@
 public class TPSCamera : MonoBehaviour
 {
     [SerializeField] private Transform _player;
+    [SerializeField] [Range(0, 0.5f)] private float maxYAngle = 0.5f;
+    [SerializeField] private float _minYAngle;
     private Quaternion _hRotation,_vRotation;
     void Start()
     {
+        //_minYAngle = _player.transform.position.y;
         _hRotation = Quaternion.identity;
         _vRotation = Quaternion.identity;
     }
