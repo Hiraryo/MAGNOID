@@ -5,36 +5,40 @@ using UnityEngine;
 
 // Automatically add RigidBody components
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(KeyInput))]
 
 public class HAL2Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject fpsCamera,tpsCamera;
-    [SerializeField] private float _walkSpeed = 5.0f;
-    [SerializeField] private float _dashSpeed = 10.0f;
-    [SerializeField] private float _rotateSpeed = 120.0f;
-    [SerializeField] private float _jumpPower = 400.0f;
+    [SerializeField] private GameObject _fpsCamera,_tpsCamera;
+    [SerializeField] private float _walkSpeed = 20.0f;
+    [SerializeField] private float _dashSpeed = 30.0f;
+    [SerializeField] private float _rotateSpeed = 150.0f;
+    [SerializeField] private float _jumpPower = 120.0f;
     private float _flyingTime = 0.0f;
     private float _instantInputTime = 5.0f;
     private float _moveSpeed;
-    private float _h,_v;
+    private float _hPlayer,_vPlayer;
     // SidestepMethod called when the this value becomes 0
     private int _instantInputCount = 2;
     // Variable to confirm the input state of the jump key. (true : pushed, false : released)
     private bool _JumpTrigger = false;
     // Variable to confirm the whether player is landing a ground. (true : landing, false : not landing)
     private bool _Grounded = true;
-    private Vector3 moveDirection = Vector3.zero;
-    private Rigidbody myrigid;
-    private Animator animator;
+    private Vector3 _moveDirection = Vector3.zero;
+    private Rigidbody _myrigid;
+    private Animator _animator;
+    private KeyInput _playerControllerScript;
     void Start()
     {
-        myrigid = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+        _myrigid = GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
+        _playerControllerScript = GetComponent<KeyInput>();
     }
 
     void FixedUpdate()
     {
-        InputGetKey();
+        _hPlayer = _playerControllerScript.InputKeyHorizontal;
+        _vPlayer = _playerControllerScript.InputKeyVertical;
     }
 
     void Update()
@@ -44,12 +48,6 @@ public class HAL2Controller : MonoBehaviour
         if (Input.GetButtonDown("NormalAttack")) {AttackMethod(0);}
         if (Input.GetButtonDown("HardAttack")) {AttackMethod(1);}
         if (Input.GetKeyDown(KeyCode.Return)) {CameraChange();}
-    }
-
-    void InputGetKey()
-    {
-        _h = Input.GetAxis("Horizontal");
-        _v = Input.GetAxis("Vertical");
     }
 
     void MoveMethod()
@@ -70,37 +68,37 @@ public class HAL2Controller : MonoBehaviour
             _instantInputCount = 2;
             _instantInputTime = 5.0f;
         }
-        Debug.Log("_instantInputCount : " + _instantInputCount + ", _instantInputTime : " + _instantInputTime + "_h : " + _h + ", _v : " + _v);
+        Debug.Log("_instantInputCount : " + _instantInputCount + ", _instantInputTime : " + _instantInputTime + "_hPlayer : " + _hPlayer + ", _vPlayer : " + _vPlayer);
         */
 
         // Judge the movement speed. ("MOVE" : WASD or Cursor key, "DASH" : Left shift key)
         _moveSpeed = (Input.GetButton("Dash")) ? _dashSpeed : _walkSpeed;
 
-        transform.Translate(0,0,_v * _moveSpeed * Time.deltaTime);
+        transform.Translate(0,0,_vPlayer * _moveSpeed * Time.deltaTime);
 
-        transform.Rotate(0, _h * _rotateSpeed * Time.deltaTime,0);
+        transform.Rotate(0, _hPlayer * _rotateSpeed * Time.deltaTime,0);
 
-        moveDirection = _v * gameObject.transform.forward;
+        _moveDirection = _vPlayer * gameObject.transform.forward;
         _JumpTrigger = (_Grounded) ? false : true;
         if(_Grounded == true)
         {
-            if(moveDirection.magnitude > 0.1f)
+            if(_moveDirection.magnitude > 0.1f)
             {
-                animator.SetFloat("Speed", moveDirection.magnitude);
+                _animator.SetFloat("Speed", _moveDirection.magnitude);
             }
             else
             {
-                animator.SetFloat("Speed",0f);
+                _animator.SetFloat("Speed",0f);
             }
-            animator.SetBool("Jump",false);
+            _animator.SetBool("Jump",false);
         }
     }
 
     void JumpMethod()
     {
         _Grounded = false;
-        myrigid.AddForce(Vector3.up * _jumpPower);
-        animator.SetBool("Jump",true);
+        _myrigid.AddForce(Vector3.up * _jumpPower);
+        _animator.SetBool("Jump",true);
         // Measure the floating time
         if(_JumpTrigger == true)
         {
@@ -135,8 +133,8 @@ public class HAL2Controller : MonoBehaviour
 
     void CameraChange()
     {
-        fpsCamera.SetActive(!fpsCamera.activeSelf);
-        tpsCamera.SetActive(!tpsCamera.activeSelf);
+        _fpsCamera.SetActive(!_fpsCamera.activeSelf);
+        _tpsCamera.SetActive(!_tpsCamera.activeSelf);
     }
 
     void OnCollisionEnter(Collision HAL2)
