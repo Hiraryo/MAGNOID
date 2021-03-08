@@ -1,0 +1,166 @@
+@startuml
+' hide the spot
+hide circle
+namespace Model{
+    class プレイヤーの腕前に応じてゲームの難易度を決める{
+        
+    }
+    class ハル移動{
+
+    }
+    class ハルジャンプ{
+
+    }
+    class ハル攻撃{
+        
+    }
+    class ハル回避{
+        
+    }
+    class プレイヤーの腕前計算{
+        
+    }
+    class プレイヤーの腕前からゲームの難易度を決定{
+        
+    }
+    class プレイヤーの操作方法を記憶{
+        
+    }
+    class ゲームオーバーの原因調査{
+        
+    }
+    class プレイヤーが住んでいる県を取得{
+        
+    }
+    class プレイヤーが住んでいる県から気象庁のデータを参照して現実の世界の天候をゲームの世界に反映{
+        
+    }
+    class 敵の移動{
+        
+    }
+    class 敵の攻撃{
+        
+    }
+    class ハルと敵のダメージ処理{
+
+    }
+    class ゲームの難易度から敵の強さを決定{
+        
+    }
+    class ゲームの進行度に応じたギミック{
+
+    }
+    class ハルによるギミック{
+
+    }
+    class 敵によるギミック{
+
+    }
+    class 天候によるギミック{
+
+    }
+    class 特殊道具によるギミック{
+
+    }
+    class 道具を自動的に切り替える{
+
+    }
+    class 自動攻撃{
+
+    }
+    class 電気爆弾{
+        
+    }
+
+}
+namespace View{
+    class ハル移動{
+
+    }
+    class ハルジャンプ{
+
+    }
+    class ハル攻撃{
+        
+    }
+    class ハル回避{
+        
+    }
+    class 敵の移動{
+        
+    }
+    class 敵の攻撃{
+        
+    }
+    class ゲームの進行度に応じたギミック{
+
+    }
+    class ハルによるギミック{
+
+    }
+    class 敵によるギミック{
+
+    }
+    class 天候によるギミック{
+
+    }
+    class 特殊道具によるギミック{
+
+    }
+    class 道具を自動的に切り替える{
+
+    }
+    class 自動攻撃{
+
+    }
+    class 電気爆弾{
+        
+    }
+
+}
+namespace Controller{
+    class ハル移動{
+
+    }
+    class ハルジャンプ{
+
+    }
+    class ハル攻撃{
+        
+    }
+    class ハル回避{
+        
+    }
+    class プレイヤーの操作方法を記憶{
+        
+    }
+    class ゲームオーバーの原因調査{
+        
+    }
+    class 敵の移動{
+        
+    }
+    class 敵の攻撃{
+        
+    }
+    class ハルによるギミック{
+
+    }
+    class 天候によるギミック{
+
+    }
+    class 特殊道具によるギミック{
+
+    }
+    class 道具を自動的に切り替える{
+
+    }
+    class 自動攻撃{
+
+    }
+    class 電気爆弾{
+        
+    }
+}
+
+@enduml
