@@ -1,10 +1,18 @@
 @startuml
 namespace Common{
-    enum GameScene
+    enum GameScene{
+        Tutorial
+        Forest
+        City
+        AirBattle
+        FinalBoss
+    }
     class SceneLoader
 }
 namespace Damages{
-    interface IDamageApplicable
+    interface IDamageApplicable{
+        - ApplyDamage(Damage damage): void
+    }
     class Damage
 }
 namespace Effects{
@@ -22,7 +30,11 @@ namespace Installers{
     class StageInstaller
 }
 namespace Managers{
-    enum GameState
+    enum GameState{
+        Ready
+        Battle
+        finished
+    }
     class BGMFadeOut
     class GameInitializer
     class GameStartOption
@@ -59,8 +71,24 @@ namespace Players{
     }
 }
 namespace Stages{
-    enum weather
-    enum Timezone
+    enum weather{
+        Sunny
+        Rainy
+        Cloudy
+        Windy
+        Humid
+        Dry
+        Stormy
+        Snowy
+        Foggy
+        Dark
+        Frosty
+    }
+    enum Timezone{
+        Morning
+        Noon
+        Night
+    }
     namespace Gimmick{
         class WeatherGimmick
         class ElectricBomb
