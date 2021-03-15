@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
@@ -17,7 +18,6 @@
 /[Aa]ssets/3DCG/
 /[Aa]ssets/Sound/
 /[Aa]ssets/Scenes/
-/[Ll]ocalPackages/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -35,7 +35,6 @@
 # Visual Studio cache directory
 .vs/
 .vscode
-.vsconfig
 
 # Gradle cache directory
 .gradle/
