@@ -9,23 +9,26 @@ namespace Common{
     }
     class SceneLoader
 }
+Common.SceneLoader -- Common.GameScene
 namespace Damages{
     interface IDamageApplicable{
         - ApplyDamage(Damage damage): void
     }
-    class Damage
+    class Damage <<struct>>
 }
+
 namespace Effects{
-    class Shake
+    class Shake <<MonoBehaviour>>
 }
 namespace Enemies{
-    class BaseEnemy
+    class BaseEnemy <<MonoBehaviour>>
     class Spider
     namespace Gimmick{
         class OperationReversal
         class MinusMagnet
     }
 }
+
 namespace Installers{
     class StageInstaller
 }
@@ -33,18 +36,18 @@ namespace Managers{
     enum GameState{
         Ready
         Battle
-        finished
+        Finished
     }
-    class BGMFadeOut
-    class GameInitializer
+    class BGMFadeOut <<MonoBehaviour>>
+    class GameInitializer <<MonoBehaviour>>
     class GameStartOption
-    class GameStateManager
-    class PlayerManager
-    class ResultManager
-    class ScoreManager
-    class SoundManager
-    class StageAudioManager
-    class StageManager
+    class GameStateManager <<MonoBehaviour>>
+    class PlayerManager <<MonoBehaviour>>
+    class ResultManager <<MonoBehaviour>>
+    class ScoreManager <<MonoBehaviour>>
+    class SoundManager <<MonoBehaviour>>
+    class StageAudioManager <<MonoBehaviour>>
+    class StageManager <<MonoBehaviour>>
     namespace Calculator{
         class SkillCalculator
         class MovementPatternCalculator
@@ -52,17 +55,18 @@ namespace Managers{
         class GameOverCalculator
     }
 }
+
 namespace Players{
     enum PlayerId
     interface IInputEventProvider
-    class PlayerAnimator
-    class PlayerCore
-    class PlayerEffectEmitter
-    class PlayerMover
-    class PlayerAttacker
-    class PlayerAvoider
-    class PlayerJumper
-    class PlayerRecover
+    class PlayerAnimator <<MonoBehaviour>>
+    class PlayerCore <<MonoBehaviour>>
+    class PlayerEffectEmitter <<MonoBehaviour>>
+    class PlayerMover <<MonoBehaviour>>
+    class PlayerAttacker <<MonoBehaviour>>
+    class PlayerAvoider <<MonoBehaviour>>
+    class PlayerJumper <<MonoBehaviour>>
+    class PlayerRecover <<MonoBehaviour>>
     namespace Gimmick{
         class ElectromagneticBarrier
         class AI
@@ -70,8 +74,9 @@ namespace Players{
         class TimeManipulation
     }
 }
+
 namespace Stages{
-    enum weather{
+    enum Weather{
         Sunny
         Rainy
         Cloudy
@@ -89,6 +94,7 @@ namespace Stages{
         Noon
         Night
     }
+    class StageState <<struct>>
     namespace Gimmick{
         class WeatherGimmick
         class ElectricBomb
@@ -99,19 +105,69 @@ namespace Stages{
         class SpecialTool4
     }
 }
+
 namespace Title{
     namespace Manager{
-        class TitleManager
+        class TitleManager <<MonoBehaviour>>
     }
     namespace Controller{
-        class UIController
+        class UIController <<MonoBehaviour>>
     }
     namespace View{
-        class ChooseButton
+        class ChooseButton <<MonoBehaviour>>
     }
 }
 namespace UIs{
-    class ResultController
-    class StageUIController
+    class ResultController <<MonoBehaviour>>
+    class StageUIController <<MonoBehaviour>>
 }
+Damages.IDamageApplicable --> Damages.Damage
+Enemies.Gimmick.MinusMagnet ..> Enemies.Spider
+Enemies.Gimmick.OperationReversal ..> Enemies.Spider
+Enemies.Spider --|> Enemies.BaseEnemy
+Enemies.Spider --> Damages.IDamageApplicable : Attack
+Managers.Calculator.SkillCalculator ..> Managers.PlayerManager
+Managers.Calculator.MovementPatternCalculator ..> Managers.PlayerManager
+Managers.Calculator.EnemyDifficultyCalculator ..> Managers.PlayerManager
+Managers.Calculator.GameOverCalculator ..> Managers.PlayerManager
+Managers.Calculator.EnemyDifficultyCalculator ..> Enemies.Spider
+Managers.GameStateManager -- Managers.GameState
+Managers.SoundManager -- Managers.GameState
+Managers.StageAudioManager -- Managers.GameState
+Managers.GameStateManager --> Managers.GameInitializer
+Managers.GameStateManager --> Managers.ResultManager
+Managers.SoundManager --> Managers.BGMFadeOut
+Managers.ResultManager ..> UIs.ResultController
+Managers.GameStateManager ..> UIs.StageUIController
+Managers.ScoreManager ..> UIs.StageUIController
+Managers.GameStartOption ..> Stages.StageState
+Players.Gimmick.ElectromagneticBarrier ..> Players.IInputEventProvider
+Players.Gimmick.AI ..> Players.IInputEventProvider
+Players.Gimmick.AI ..> Players.PlayerAttacker
+Players.Gimmick.MindReading ..> Players.IInputEventProvider
+Players.Gimmick.TimeManipulation ..> Players.IInputEventProvider
+Players.PlayerMover --> Players.IInputEventProvider
+Players.PlayerAttacker --> Players.IInputEventProvider
+Players.PlayerJumper --> Players.IInputEventProvider
+Players.PlayerAvoider --> Players.IInputEventProvider
+Players.PlayerAnimator --> Players.PlayerMover
+Players.PlayerRecover --> Players.PlayerCore
+Players.PlayerMover --> Players.PlayerCore
+Players.PlayerAttacker --> Players.PlayerCore
+Players.PlayerJumper --> Players.PlayerCore
+Players.PlayerAvoider --> Players.PlayerCore
+Players.PlayerEffectEmitter --> Players.PlayerCore
+Players.PlayerCore ..|>Damages.IDamageApplicable
+Players.PlayerCore --> Players.PlayerId
+Stages.Gimmick.WeatherGimmick --> Stages.Weather
+Stages.Gimmick.WeatherGimmick ..> Managers.StageManager
+Stages.StageState -- Stages.Timezone
+Stages.StageState -- Stages.Weather
+Stages.Gimmick.ElectricBomb ..> Damages.IDamageApplicable : Attack
+Stages.Gimmick.ToolSwitching ..> Players.Gimmick.AI
+Stages.Gimmick.SpecialTool1 ..> Players.PlayerAttacker
+Stages.Gimmick.SpecialTool2 ..> Players.PlayerAttacker
+Stages.Gimmick.SpecialTool2 ..> Players.PlayerMover
+Stages.Gimmick.SpecialTool3 ..> Players.PlayerRecover
+Stages.Gimmick.SpecialTool4 ..> Players.Gimmick.AI
 @enduml
