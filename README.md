@@ -189,7 +189,7 @@ MAGNOID<br>
 - 参加人数や各プレイヤーの腕前で追加効果の発生や難易度の変化が起きる。
 
 ## クラス図
-クラス図は[こちら](https://github.com/Hiraryo/MAGNOID/blob/class/README.md)になります
+クラス図は[こちら](https://github.com/Hiraryo/MAGNOID/blob/class/ClassDesign/MAGNOID%20In-game.png)にございます。
 ## インゲーム部分の抽出
 - ハル移動
 - ハルジャンプ
