@@ -3,6 +3,18 @@ MAGNOID<br>
 〜アイでまだ見ぬ世界へ〜
 </h1>
 
+### メモ
+　▶︎　Planning
+
+　Prototype
+
+　Class design
+
+　Coding
+
+　Debug
+
+---
 
 ### 人間離れした新たな爽快3DアクションRPGゲーム
 人間界とMAGNOIDの世界をリンクさせる<br>
