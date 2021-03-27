@@ -201,8 +201,6 @@ MAGNOID<br>
 - 他のプレイヤーと協力し、敵を倒すマルチバトル。
 - 参加人数や各プレイヤーの腕前で追加効果の発生や難易度の変化が起きる。
 
-## クラス図
-クラス図は[こちら](https://github.com/Hiraryo/MAGNOID/blob/class/ClassDesign/MAGNOID%20In-game.png)にございます。
 ## インゲーム部分の抽出
 - ハル移動
 - ハルジャンプ
@@ -249,6 +247,3 @@ MAGNOID<br>
   - 電気爆弾・・・触れると感電する
   
 ## Class design
-#### [こちら](https://github.com/Hiraryo/MAGNOID/blob/class/ClassDesign/MAGNOID%20In-game.png)がクラス図でございます。
-
-#### MVCへの振り分けは[このよう](https://github.com/Hiraryo/MAGNOID/blob/class/ClassDesign/MAGNOID%20In-gameMVC.png)にしました。
