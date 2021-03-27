@@ -6,7 +6,7 @@ MAGNOID<br>
 ### メモ
 　Planning
 
-▶︎　　Prototype
+▶︎　Prototype
 
 　Class design
 
