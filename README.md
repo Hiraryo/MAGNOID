@@ -4,6 +4,8 @@ MAGNOID<br>
 </h1>
 
 ### メモ
+　Planning
+
 ▶︎　　Prototype
 
 　Class design
