@@ -11,3 +11,5 @@ MAGNOID<br>
 　Class design
 
 　Coding
+
+　Debug
