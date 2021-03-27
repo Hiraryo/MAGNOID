@@ -3,9 +3,9 @@ MAGNOID<br>
 〜アイでまだ見ぬ世界へ〜
 </h1>
 
-### メモ
+### 進行状況
 　Planning
-
+ 
 　▶︎　Prototype
 
 　Class design
@@ -13,9 +13,10 @@ MAGNOID<br>
 　Coding
 
 　Debug
- 
----
 
+---
+ 
+## Planning
 ### 人間離れした新たな爽快3DアクションRPGゲーム
 人間界とMAGNOIDの世界をリンクさせる<br>
 外で遊べない時はMAGNOIDで遊んで頂きたいので、 **現実とMAGNOIDの天候は反転させる**<br>
@@ -246,3 +247,8 @@ MAGNOID<br>
 - 「移動」「回避」「ジャンプ」は必ずユーザーが行う。攻撃については基本ハルがオートで行う。（過去のプレイヤーの遊び方を参考にオートで戦う）オートでもプレイヤーは好きなタイミングで操作できる
 - 障害物について
   - 電気爆弾・・・触れると感電する
+  
+## Class design
+#### [こちら](https://github.com/Hiraryo/MAGNOID/blob/class/ClassDesign/MAGNOID%20In-game.png)がクラス図でございます。
+
+#### MVCへの振り分けは[このよう](https://github.com/Hiraryo/MAGNOID/blob/class/ClassDesign/MAGNOID%20In-gameMVC.png)にしました。
