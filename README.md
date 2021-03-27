@@ -4,16 +4,16 @@ MAGNOID<br>
 </h1>
 
 ### メモ
-　▶︎　Planning
+　Planning
 
-　Prototype
+　▶︎　Prototype
 
 　Class design
 
 　Coding
 
 　Debug
-
+ 
 ---
 
 ### 人間離れした新たな爽快3DアクションRPGゲーム
