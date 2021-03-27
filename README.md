@@ -18,7 +18,7 @@ MAGNOID<br>
 
 ## *MAGNOID CODING GUIDELINES*
 1. 良いコードを書くこと
-2.  **この変数名は他の人が理解しやすいか？** を意識して、 **後から見た時に、変数の役割をすぐに思い出せる変数名** にすること
+2. 分かりやすい変数名にすること。　具体的には **この変数名は他の人が理解しやすいか？** を意識して、 **後から見た時に、変数の役割をすぐに思い出せる変数名** にすること
 3. 「処理の流れが追いづらい」を防ぐために、クラスを分割しすぎないこと
 4. クラスはなるべく少なくすること
 5. Microsoftの[C# のコーディング規則 (C# プログラミング ガイド)](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)に従うこと
