@@ -4,7 +4,7 @@ MAGNOID<br>
 </h1>
 
 ### 進行状況
-　Planning
+　Planning✔︎
  
 　▶︎　Prototype
 
