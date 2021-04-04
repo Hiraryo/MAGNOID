@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Controllerで受け取った現在時刻や時期（季節）などのデータより、ステージ環境及び難易度、適切な敵の配置を決める
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
