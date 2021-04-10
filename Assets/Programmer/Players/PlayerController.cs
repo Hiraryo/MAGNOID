@@ -11,7 +11,7 @@ public class PlayerController : PlayerView
 {
     private float _walk = 10.0f;
     private float _dash = 15.0f;
-    private float _moveSpeed;
+    private float _moveSpeed,_sideStepSpeed = 10.0f;
     private float h, v;
     private Vector3 _nowSpeed,_latestPos;
     private int up, down, left, right;
@@ -35,6 +35,6 @@ public class PlayerController : PlayerView
         v = Input.GetAxis("Vertical");
         _moveSpeed = (Input.GetKey(KeyCode.LeftShift)) ? _dash : _walk;
         base.Move(h, v, _moveSpeed);
-        if (Input.GetKeyDown(KeyCode.RightShift)) { base.Sidestep(h, v, _moveSpeed); }
+        if (Input.GetKeyDown(KeyCode.RightShift)) { base.Sidestep(h, v, _sideStepSpeed); }
     }
 }

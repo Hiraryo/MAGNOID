@@ -61,8 +61,8 @@ public class PlayerView : MonoBehaviour
         _nowSpeed = _myrigid.velocity.magnitude;
         if(_nowSpeed > 0)
         {
-            h = (h > 0.0f) ? 1.0f : -1.0f;
-            v = (v > 0.0f) ? 1.0f : -1.0f;
+            h = (h > 0.0f) ? -1.0f : 0.0f;
+            v = (v > 0.0f) ? -1.0f : 0.0f;
             _inputDirection = new Vector3(v, 0, h);
             //現在の方向ベクトルを取得
             _moveDirection = transform.position - _nowPosition;
@@ -71,8 +71,9 @@ public class PlayerView : MonoBehaviour
             //入力された方向キーと方向ベクトルが異なれば、入力方向に移動させて回避を実現。入力された方向と方向ベクトルが同じであれば、それは移動なので回避は行わない。
             if(_moveDirection != _inputDirection)
             {
+                Debug.Log(_inputDirection);
                 //入力方向に回避
-                _myrigid.AddForce(_inputDirection * speed);
+                _myrigid.AddForce(_inputDirection * speed, ForceMode.VelocityChange);
             }
         }
     }
