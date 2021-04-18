@@ -1,16 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Enemies
+namespace Enemies.Spider
 {
-    interface IEnemyMover
-    {
-        void Walk();
-        void Jump();
-        void Fly();
-        void Hide();
-        void Dash();
-    }
-
     class SpiderMover : IEnemyMover
     {
         /// <summary>
@@ -18,7 +9,7 @@ namespace Enemies
         /// </summary>
         public void Walk()
         {
-            
+
         }
 
         /// <summary>

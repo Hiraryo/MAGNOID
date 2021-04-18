@@ -1,14 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Enemies
+namespace Enemies.Spider
 {
-    interface IEnemyAttacker
-    {
-        void Attack();
-        void Level();
-        void Status();
-    }
-
     class SpiderAttacker : IEnemyAttacker
     {
         /// <summary>
@@ -16,7 +9,7 @@ namespace Enemies
         /// </summary>
         public void Attack()
         {
-            
+
         }
 
         /// <summary>
@@ -24,7 +17,7 @@ namespace Enemies
         /// </summary>
         public void Level()
         {
-            
+
         }
 
         /// <summary>
@@ -43,5 +36,4 @@ namespace Enemies
 
         }
     }
-
 }
