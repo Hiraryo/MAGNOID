@@ -5,7 +5,7 @@ namespace InputProviders
 {
     public class InputProvider : IInputProvider
     {
-        public bool GetDash()
+        public bool GetMove()
         {
             return Input.GetButton("Dash");
         }
@@ -13,6 +13,16 @@ namespace InputProviders
         public bool GetJump()
         {
             return Input.GetButton("Jump");
+        }
+
+        public bool GetAttack()
+        {
+            return Input.GetButton("Attack");
+        }
+
+        public bool GetSidestep()
+        {
+            return Input.GetButton("Kaihi");
         }
 
         public Vector3 GetMoveDirection()

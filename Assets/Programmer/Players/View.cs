@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class View : MonoBehaviour
+public class MoveView : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,10 @@ public class View : MonoBehaviour
     void Update()
     {
         
+    }
+
+    protected void Jump()
+    {
+
     }
 }
