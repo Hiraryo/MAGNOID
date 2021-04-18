@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Players.HAL2
 {
-    public class HAL2Base : MonoBehaviour
+    public abstract class HAL2Base : MonoBehaviour
     {
         private HAL2Mover HAL2Mover;
         private HAL2Attacker HAL2Attacker;
