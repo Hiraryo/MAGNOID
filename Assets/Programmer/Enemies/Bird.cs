@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemies.Spider
+namespace Enemies
 {
-    public abstract class Spider : EnemyBase
+    public abstract class Bird : EnemyBase
     {
         private void Start()
         {
-
+            
         }
 
         private void Update()
         {
-
+            
         }
     }
 }
-

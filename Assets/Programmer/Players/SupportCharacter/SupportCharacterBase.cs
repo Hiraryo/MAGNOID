@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿//-----------------------------
+//引数や返り値は、仮で設定
+//-----------------------------
+using UnityEngine;
 
 namespace Players.SupportCharacter
 {
-    public abstract class SupportCharacterBase : MonoBehaviour, IMover, IAttacker
+    public abstract class SupportCharacterBase : MonoBehaviour, ISupportCharacterMover, ISupportCharacterAttacker
     {
         private void Start()
         {
@@ -15,7 +18,7 @@ namespace Players.SupportCharacter
         }
 
         /// <summary>
-        /// メインキャラクターに追従するプログラム
+        /// 操作キャラクターに追従するプログラム
         /// </summary>
         public void Follow()
         {
@@ -23,7 +26,8 @@ namespace Players.SupportCharacter
         }
 
         /// <summary>
-        /// メインキャラクターのサポートとして、敵への攻撃も行う
+        /// 操作キャラクターのサポートとして、敵への攻撃も行う。
+        /// その攻撃についてのプログラム
         /// </summary>
         public void Attack()
         {
@@ -31,7 +35,7 @@ namespace Players.SupportCharacter
         }
 
         /// <summary>
-        /// 「メインキャラクターのガード」に関するプログラム
+        /// 「操作キャラクターのガード」についてのプログラム
         /// </summary>
         public void Guard()
         {

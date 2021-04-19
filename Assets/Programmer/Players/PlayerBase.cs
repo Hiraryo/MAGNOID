@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//-----------------------------
+//引数や返り値は、仮で設定
+//-----------------------------
+using UnityEngine;
 
 namespace Players
 {
@@ -14,16 +17,25 @@ namespace Players
             
         }
 
+        /// <summary>
+        /// 操作キャラクターを歩かせるプログラム
+        /// </summary>
         public void Walk()
         {
 
         }
 
+        /// <summary>
+        /// 操作キャラクターの「ジャンプ」についてのプログラム
+        /// </summary>
         public void Jump()
         {
 
         }
 
+        /// <summary>
+        /// 操作キャラクターの「回避」についてのプログラム
+        /// </summary>
         public void Sidestep()
         {
 

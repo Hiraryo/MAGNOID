@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//-----------------------------
+//引数や返り値は、仮で設定
+//-----------------------------
+using UnityEngine;
 
 namespace Enemies
 {

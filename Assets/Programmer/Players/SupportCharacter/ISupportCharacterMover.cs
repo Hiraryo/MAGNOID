@@ -2,9 +2,8 @@
 
 namespace Players.SupportCharacter
 {
-    interface IAttacker
+    interface ISupportCharacterMover
     {
-        void Attack();
-        void Guard();
+        void Follow();
     }
 }
