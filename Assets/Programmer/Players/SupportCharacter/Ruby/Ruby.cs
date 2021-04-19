@@ -4,15 +4,12 @@ using UnityEngine;
 
 namespace Players.SupportCharacter.Ruby
 {
-    public abstract class Ruby : MonoBehaviour
+    public abstract class Ruby : SupportCharacterBase
     {
-        private RubyMover rubyMover;
-        private RubyAttacker rubyAttacker;
 
         private void Start()
         {
-            rubyMover = new RubyMover();
-            rubyAttacker = new RubyAttacker();
+            
         }
 
         private void Update()

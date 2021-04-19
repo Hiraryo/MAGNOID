@@ -1,9 +1,43 @@
 ﻿using UnityEngine;
 
-namespace Enemies.Spider
+namespace Enemies
 {
-    class SpiderMover : IEnemyMover
+    public abstract class EnemyBase : MonoBehaviour, IEnemyAttacker, IEnemyMover
     {
+        private void Start()
+        {
+            
+        }
+
+        private void Update()
+        {
+            
+        }
+
+        /// <summary>
+        /// 敵の攻撃スタイルを決めるプログラム（近距離・中距離・遠距離）
+        /// </summary>
+        public void Attack()
+        {
+
+        }
+
+        /// <summary>
+        /// 敵のレベルを決めるプログラム
+        /// </summary>
+        public void Level()
+        {
+
+        }
+
+        /// <summary>
+        /// 敵の状態を決めるプログラム(活発かなど)
+        /// </summary>
+        public void Status()
+        {
+
+        }
+
         /// <summary>
         /// 蜘蛛の「歩き」に関するプログラム
         /// </summary>

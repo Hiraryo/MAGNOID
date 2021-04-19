@@ -4,15 +4,12 @@ using UnityEngine;
 
 namespace Players.HAL2
 {
-    public abstract class HAL2Base : MonoBehaviour
+    public abstract class HAL2Base : PlayerBase
     {
-        private HAL2Mover HAL2Mover;
-        private HAL2Attacker HAL2Attacker;
 
         private void Start()
         {
-            HAL2Mover = new HAL2Mover();
-            HAL2Attacker = new HAL2Attacker();
+
         }
 
         private void Update()
